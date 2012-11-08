@@ -3,8 +3,8 @@ Genetic Algorithm implementation in Python for the Traveling Salesman Problem
 
 The main script is the `ga.py` file which contains base classes for creating
 your own Genetic Algorithm (i.e.
-`import ga; env = ga.Environment(kind=YourKind)` where `YourKind` is some
-class inheriting `IndividualBase`) or for simply running the provided
+``import ga; env = ga.Environment(kind=YourKind)`` where ``YourKind`` is some
+class inheriting ``ga.IndividualBase``) or for simply running the provided
 implementation of the Traveling Salesman Problem.
 
 Usage for the latter:
