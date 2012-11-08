@@ -86,28 +86,35 @@ for(var elitism in filters.Elitism){
             var mutation = filters.Mutation[m_i];
             for(var c_i in filters.Crossover){
                 var crossover  = filters.Crossover[c_i];
-                var src = 'images/'
+                var src = ''
                     + 'elitism_' + elitism
                     +'_population_' + population
                     +'_mutation_' + mutation
-                    +'_crossover_' + crossover
-                    + '.png';
-                var image = $('<img>').attr({
-                    elitism: elitism,
-                    population: population,
-                    mutation: mutation,
-                    crossover: crossover,
-                    src: src,
-                    style: ''
-                        + 'float: left;'
-                        + 'display: none;',
+                    +'_crossover_' + crossover;
+
+                var link = $('<a>').attr({
+                    href: 'csv/' + src + '.csv',
+                    target: '_blank',
+                    class: 'csv-link btn',
                     title: ''
                         + 'Elitism: ' + filters.Elitism[elitism] + '<br>'
                         + 'Population: ' + population + '<br>'
                         + 'Mutation: ' + mutation + '<br>'
                         + 'Crossover: ' + crossover
                 });
-                images.append(image);
+
+                var image = $('<img>').attr({
+                    elitism: elitism,
+                    population: population,
+                    mutation: mutation,
+                    crossover: crossover,
+                    src: 'images/' + src + '.png',
+                    style: ''
+                        + 'float: left;'
+                        + 'display: none;',
+                });
+                link.append(image);
+                images.append(link);
             }
         }
     }
@@ -152,7 +159,7 @@ function change(){
 
 $('input').change(change);
 change();
-$('img').tooltip({
+$('a.csv-link').tooltip({
     html: true,
     placement: 'bottom'
 });
