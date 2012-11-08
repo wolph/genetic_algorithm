@@ -45,6 +45,17 @@ To generate all output automatically there is also a script called
 `generate_charts.sh` available which automatically try all kinds of different
 values for elitism, population, mutation and crossover.
 
+Requirements
+--------------------------------------------------------------------------------
+
+This library has been tested with Python 2.7, freely available from Python.org
+and has no other "hard" requirements. For prettier output I recommend installing
+``fabulous`` though, it's a Python module that enables coloured output within
+your shell and makes everything a lot prettier.
+
+If you run a Python version before 2.7 than you probably need to install the 
+multiprocessing library. I am not entirely certain about the specific since I
+don't have a pre 2.7 machine available right now.
 
 If you have any questions, feel free to mail me at: `Rick _at_ Fawo _dot_ nl`
 
