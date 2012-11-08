@@ -92,15 +92,21 @@ for(var elitism in filters.Elitism){
                     +'_mutation_' + mutation
                     +'_crossover_' + crossover
                     + '.png';
-                var image = $('<img src="' + src + '">');
-                image.attr({
+                var image = $('<img>').attr({
                     elitism: elitism,
                     population: population,
                     mutation: mutation,
-                    crossover: crossover
+                    crossover: crossover,
+                    src: src,
+                    style: ''
+                        + 'float: left;'
+                        + 'display: none;',
+                    title: ''
+                        + 'Elitism: ' + filters.Elitism[elitism] + '<br>'
+                        + 'Population: ' + population + '<br>'
+                        + 'Mutation: ' + mutation + '<br>'
+                        + 'Crossover: ' + crossover
                 });
-                image.css('float', 'left');
-                image.hide();
                 images.append(image);
             }
         }
@@ -146,5 +152,9 @@ function change(){
 
 $('input').change(change);
 change();
+$('img').tooltip({
+    html: true,
+    placement: 'bottom'
+});
 
 });
