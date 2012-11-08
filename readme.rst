@@ -1,11 +1,6 @@
 Genetic Algorithm implementation in Python for the Traveling Salesman Problem
 ==============================================================================
 
-Contents:
-
-.. toctree::
-   :maxdepth: 4
-
 The main script is the `ga.py` file which contains base classes for creating
 your own Genetic Algorithm (i.e.
 `import ga; env = ga.Environment(kind=YourKind)` where `YourKind` is some
@@ -52,10 +47,4 @@ values for elitism, population, mutation and crossover.
 
 
 If you have any questions, feel free to mail me at: `Rick _at_ Fawo _dot_ nl`
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
 
