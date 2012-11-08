@@ -96,6 +96,13 @@ for(var elitism in filters.Elitism){
                     href: 'csv/' + src + '.csv',
                     target: '_blank',
                     class: 'csv-link btn',
+                    elitism: elitism,
+                    population: population,
+                    mutation: mutation,
+                    crossover: crossover,
+                    style: ''
+                        + 'float: left;'
+                        + 'display: none;',
                     title: ''
                         + 'Elitism: ' + filters.Elitism[elitism] + '<br>'
                         + 'Population: ' + population + '<br>'
@@ -104,14 +111,7 @@ for(var elitism in filters.Elitism){
                 });
 
                 var image = $('<img>').attr({
-                    elitism: elitism,
-                    population: population,
-                    mutation: mutation,
-                    crossover: crossover,
-                    src: 'images/' + src + '.png',
-                    style: ''
-                        + 'float: left;'
-                        + 'display: none;',
+                    src: 'images/' + src + '.png'
                 });
                 link.append(image);
                 images.append(link);
@@ -138,13 +138,13 @@ $.fn.serializeObject = function()
 };
 
 function change(){
-    $('img').hide();
+    $('a.csv-link').hide();
     var filters = [];
     $('input[name=elitism]:checked').each(function(_, elitism){
         $('input[name=population]:checked').each(function(_, population){
             $('input[name=mutation]:checked').each(function(_, mutation){
                 $('input[name=crossover]:checked').each(function(_, crossover){
-                    filters.push('img'
+                    filters.push('a.csv-link'
                         + '[elitism="' + elitism.value +'"]'
                         + '[population="' + population.value +'"]'
                         + '[mutation="' + mutation.value +'"]'
